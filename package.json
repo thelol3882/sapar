@@ -1,0 +1,151 @@
+{
+    "name": "@thelol3882/sapar",
+    "version": "0.3.0",
+    "description": "Sapar: headless product tours and a What's New feed for React, Next.js and Expo, with an in-memory or HTTP source.",
+    "keywords": [
+        "product-tour",
+        "onboarding",
+        "walkthrough",
+        "whats-new",
+        "announcements",
+        "react",
+        "nextjs",
+        "expo",
+        "react-native",
+        "headless"
+    ],
+    "license": "MIT",
+    "author": "Dias Shabarov",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thelol3882/sapar.git"
+    },
+    "homepage": "https://github.com/thelol3882/sapar#readme",
+    "bugs": {
+        "url": "https://github.com/thelol3882/sapar/issues"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "files": [
+        "dist",
+        "templates",
+        "!templates/**/*.test.*"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/core/index.d.ts",
+            "import": "./dist/core/index.js"
+        },
+        "./react": {
+            "types": "./dist/react/index.d.ts",
+            "import": "./dist/react/index.js"
+        },
+        "./web": {
+            "types": "./dist/web/index.d.ts",
+            "import": "./dist/web/index.js"
+        },
+        "./next": {
+            "types": "./dist/next/index.d.ts",
+            "import": "./dist/next/index.js"
+        },
+        "./rtk": {
+            "types": "./dist/rtk/index.d.ts",
+            "import": "./dist/rtk/index.js"
+        },
+        "./expo": {
+            "types": "./dist/expo/index.d.ts",
+            "import": "./dist/expo/index.js"
+        },
+        "./expo-router": {
+            "types": "./dist/expo-router/index.d.ts",
+            "import": "./dist/expo-router/index.js"
+        }
+    },
+    "scripts": {
+        "build": "rm -rf dist && tsup",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+    },
+    "dependencies": {
+        "@floating-ui/react-dom": "^2.1.6"
+    },
+    "peerDependencies": {
+        "@react-native-async-storage/async-storage": ">=2 <4",
+        "@reduxjs/toolkit": ">=2",
+        "next": ">=15",
+        "react": ">=18.3",
+        "react-dom": ">=18.3",
+        "react-redux": ">=9",
+        "react-native": ">=0.79",
+        "react-native-svg": ">=15",
+        "expo-router": ">=5",
+        "@mantine/core": ">=7",
+        "typescript": ">=5"
+    },
+    "peerDependenciesMeta": {
+        "@react-native-async-storage/async-storage": {
+            "optional": true
+        },
+        "@reduxjs/toolkit": {
+            "optional": true
+        },
+        "next": {
+            "optional": true
+        },
+        "react-dom": {
+            "optional": true
+        },
+        "react-redux": {
+            "optional": true
+        },
+        "react-native": {
+            "optional": true
+        },
+        "react-native-svg": {
+            "optional": true
+        },
+        "expo-router": {
+            "optional": true
+        },
+        "@mantine/core": {
+            "optional": true
+        },
+        "typescript": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@mantine/core": "^9.8.0",
+        "@mantine/hooks": "^9.8.0",
+        "@react-native-async-storage/async-storage": "^3.1.1",
+        "@reduxjs/toolkit": "^2.11.1",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.2",
+        "@testing-library/user-event": "^14.6.1",
+        "@types/node": "^24.10.1",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.0.4",
+        "async-storage-v2": "npm:@react-native-async-storage/async-storage@2.2.0",
+        "expo-router": "^58.0.30",
+        "jsdom": "^29.1.1",
+        "next": "^16.2.6",
+        "react": "^19.2.1",
+        "react-dom": "^19.2.1",
+        "react-native": "^0.88.1",
+        "react-native-svg": "^15.16.1",
+        "react-redux": "^9.2.0",
+        "tsup": "^8.5.0",
+        "typescript": "^5.9.3",
+        "vitest": "^4.1.5"
+    },
+    "bin": {
+        "sapar": "./dist/cli/index.js"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
